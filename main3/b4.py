@@ -323,7 +323,7 @@ async def bacaasistena2(c1,p1):
                 if nmlain not in namabotyangada:namabotyangada.append(nmlain)
             except:pass
             
-Print("Bot 1 loaded")
+print("Bot 1 loaded")
 
 
 
