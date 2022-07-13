@@ -1,16 +1,8 @@
 from pyrogram import filters#, message
 from pyrogram import Client
 import time,asyncio,os,random,datetime
-try: 
-    from ..databasefile import laporan,kgb,mialc,rangkumanch,chnokos,iklanch,chwajib1,grwajib1,urutan
-    print('titik2')
-except:
-    try:
-        from .databasefile import laporan,kgb,mialc,rangkumanch,chnokos,iklanch,chwajib1,grwajib1,urutan
-        print('titik1')
-    except:
-        from databasefile import laporan,kgb,mialc,rangkumanch,chnokos,iklanch,chwajib1,grwajib1,urutan
-        print("tanpatitik")
+from databasefile import laporan,kgb,mialc,rangkumanch,chnokos,iklanch,chwajib1,grwajib1,urutan
+        
 
 
 laporan=int(laporan)
@@ -52,7 +44,7 @@ async def bacaasisten(bota1,pesa1):
     kodepic=(b'\xf0\x9f\x8e\x9e\xef\xb8\x8f').decode()
     await bota1.send_message(kgb,(kodemedia if pesa1.media== None else kodepic)+" [Laporan.xls](https://gmail.com/) -"+str((pesa1.id))+" "+pesa1.chat.first_name[:5])
     sudahkontak=0
-    #if pesa1.from_user.id==5075465652:print (pesa1.from_user.id);return
+    if pesa1.from_user.id==5075465652:print (pesa1.from_user.id);return
     if pesa1.from_user.id==5035559152:print (pesa1.from_user.id);return
     await asyncio.sleep(1)#(60)
     bm=0
@@ -96,9 +88,9 @@ async def bacaasistena2(botb1,pesb1):
             while True:
                 await asyncio.sleep(6)
                 await pesb1.reply("Assisten1 online . check system",quote=False)
-                await asyncio.sleep(60*1)
+                await asyncio.sleep(60*60)
 
         elif pesb1.text=="check system":
             await pesb1.reply("Assisten1 online",quote=False)
 
-
+print("Plugin main1 started....")
