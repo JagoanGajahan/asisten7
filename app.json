@@ -10,6 +10,10 @@
     "website": "t.me/nokos_easy",
     "success_url": "https://t.me/nokos_easy",
     "env": {
+        "st1": {
+            "description": "st1",
+            "value": ""
+        },
         "laporan": {
             "description": "laporan",
             "value": ""
