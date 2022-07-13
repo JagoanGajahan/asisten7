@@ -14,6 +14,14 @@
             "description": "st1",
             "value": ""
         },
+        "st2": {
+            "description": "st2",
+            "value": ""
+        },
+        "sb1": {
+            "description": "sb1",
+            "value": ""
+        },
         "laporan": {
             "description": "laporan",
             "value": ""
