@@ -13,7 +13,14 @@ except:
         print("tanpatitik")
 
 
-
+laporan=int(laporan)
+kgb=int(kgb)
+mialc=int(mialc)
+rangkumanch=int(rangkumanch)
+chnokos=int(chnokos)
+iklanch=int(iklanch)
+chwajib1=int(chwajib1)
+grwajib1=int(grwajib1)
 
 
 
