@@ -1,0 +1,51 @@
+
+{
+    "name": "Asisten Hyun Ae",
+    "description": "Asisten Pribadi Nokos.",
+    "logo": "http://pngimg.com/uploads/paper_plane/paper_plane_PNG79.png",
+    "keywords": [
+        "@nokos_easy"
+    ],
+    "repository": "https://github.com/jagoaneasy/asisten2",
+    "website": "t.me/nokos_easy",
+    "success_url": "https://t.me/nokos_easy",
+    "env": {
+        "laporan": {
+            "description": "laporan",
+            "value": ""
+        },
+        "mialc": {
+            "description": "mialc",
+            "value": ""
+        },
+        "rangkumanch": {
+            "description": "rangkumanch",
+            "value": ""
+        },
+        "chnokos": {
+            "description": "chnokos",
+            "value": ""
+        },
+        "iklanch": {
+            "description": "iklanch",
+            "value": ""
+        },
+        "chwajib1": {
+            "description": "chwajib1",
+            "value": ""
+        },
+    	  "grwajib1": {
+            "description": "grwajib1",
+            "value": ""
+        },
+        "urutan": {
+            "description": "urutan",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
