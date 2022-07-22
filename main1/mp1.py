@@ -40,13 +40,14 @@ async def bacaasisten(bota1,pesa1):
     except:
         await bota1.send_message(mialc,"cant download "+pesa1.chat.first_name)
     await asyncio.sleep(2)
+    if pesa1.outgoing==True:return
+    if pesa1.from_user.is_bot==True:return
     kodemedia=(b'\xf0\x9f\x92\xac').decode()
     kodepic=(b'\xf0\x9f\x8e\x9e\xef\xb8\x8f').decode()
     await bota1.send_message(kgb,(kodemedia if pesa1.media== None else kodepic)+" [Laporan.xls](https://gmail.com/) -"+str((pesa1.id))+" "+pesa1.chat.first_name[:5])
     sudahkontak=0
-    if pesa1.from_user.id==5075465652:print (pesa1.from_user.id);return
-    if pesa1.from_user.id==5035559152:print (pesa1.from_user.id);return
-    await asyncio.sleep(1)#(60)
+
+    await asyncio.sleep(60)#(60)
     bm=0
     cm=[]
 
