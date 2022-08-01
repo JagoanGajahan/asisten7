@@ -4,7 +4,7 @@ import datetime,os
 st1= os.environ.get("st1")
 st2= os.environ.get("st2")
 sb1= os.environ.get("sb1")
-kb1= os.environ.get("kb1")
+kb1= os.environ.get("sk1")
 laporan = int(os.environ.get("laporan", ""))
 def saiki():
     s=datetime.datetime.now()
