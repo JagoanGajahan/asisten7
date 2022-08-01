@@ -191,7 +191,7 @@ async def tes21(c21,p21):
                 return"""
             if ((pengguna2.count(p21.chat.id))+1)%3==0:
                 print(penggunaketangguh)
-                teks="Anda telah mendownload manga sejumlah"+str(pengguna2.count(p21.chat.id))+" pdf.\nSilahkan masukkan kode unik untuk diijinkan mengakses kembali.\n Kode unik Anda dapat diambil di situs :\n"
+                teks="Anda telah mendownload manga sejumlah"+str(pengguna2.count(p21.chat.id))+" pdf.\nSilahkan masukkan kode unik untuk diijinkan mengakses kembali.\n Kode unik Anda dapat diambil di situs PASTEBIN:\n"
                 sdhdita=0
                 pkt=10000000
                 for i in range (len(koderahasia)):
@@ -203,7 +203,7 @@ async def tes21(c21,p21):
                 teks+=koderahasia[pkt][0]
                 print(koderahasia,pkt)
                 print(koderahasia[pkt])
-                teks+="\nSilahkan ketikkan kode dengan format\n __'/kode(spasi)KODEUNIK'__\nContoh : /kode MAOSMANGA \n\nAtau bisa chat ke admin agar tidak perlu password kode '/hub'"
+                teks+="\nSilahkan ketikkan kode dengan format\n __'/kode(spasi)KODEUNIK'__\nContoh : /kode MAOSMANGA \n\nAtau bisa chat ke admin untuk mengajukan VIP '/hub'"
                 
                 await p21.reply(teks)
                 return
