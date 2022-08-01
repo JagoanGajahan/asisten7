@@ -53,6 +53,22 @@
         "urutan": {
             "description": "urutan",
             "value": ""
+        },
+        "komikbot": {
+            "description": "komikbot",
+            "value": ""
+        },
+        "tampukomik": {
+            "description": "tampukomik",
+            "value": ""
+        },
+        "urutan2": {
+            "description": "urutan2",
+            "value": ""
+        },
+        "dikodenya": {
+            "description": "dikodenya,
+            "value": ""
         }
     },
     "buildpacks": [
