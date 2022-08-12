@@ -158,7 +158,7 @@ async def tes21(c21,p21):
             if len(p21.text)>7:
                 ktmm1=0
                 for pkk in penggunaketangguh:
-                    if pkk[0]==p21.chat.id:
+                    if pkk==p21.chat.id:
                         ktmm1=1;
                         print(pkk);break
                 if ktmm1==0:
@@ -166,9 +166,12 @@ async def tes21(c21,p21):
                     return
                 ktmm2=pkk[1]
                 print(koderahasia[ktmm2])
-                if koderahasia[ktmm2][1].lower()==p21.text.split()[1]:
+                if koderahasia[ktmm2][1].lower()==p21.text.split()[1].lower():
                     await p21.reply("OKE")
                     penggunaketangguh.remove(pkk)
+                    for i in range (4):
+                        try:penggunaketangguh.remove(pkk)
+                        except:pass
                     pengguna2.remove(p21.chat.id)
                 else:
                     kesalahankode.append(p21.chat.id)
