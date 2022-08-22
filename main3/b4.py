@@ -129,7 +129,7 @@ async def tes1(c,p):
             teks="Anda belum aktif menjadi member VVIP. \nSilahkan hubungi Owner : ~~@nokos_easy~~"
             await p.reply(teks)
             return
-        elif "/boardsemua " in p.text[:12]:
+        elif p.text[:12]=="/boardsemua " :
             ada=len(daftarpeserta1)
             kir=0
             ggl=0
@@ -237,7 +237,7 @@ async def tes1(c,p):
                     dok=rangkumanch
                     for x in range (dar,smp):
                         m=await c.get_messages(rangkumanch,x)
-                        await m.copy(p.chat.id)#,protect_content=True)
+                        await m.copy(p.chat.id,protect_content=True)
                         await asyncio.sleep(0.5)
                 elif kod==2:
                     dok=iklanch
