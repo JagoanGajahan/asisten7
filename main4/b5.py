@@ -7,11 +7,12 @@ import asyncio,random
 import urllib.request
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from databasefile import laporan,urutan2,mialc,komikbot,tampukomik,dikodenya
+from databasefile import laporan,urutan2,mialc,komikbot,tampukomik,dikodenya,simink
         
 
 
 
+mimink=[]
 pengguna2=[]
 koderahasia=[]
 penggunaketangguh=[]
@@ -58,6 +59,12 @@ async def tes21(c21,p21):
                 if int(qq)<1000:continue
                 if qq not in daftarpeserta1:daftarpeserta1.append(int(qq))
             if len(q.text)<3900:break
+        q=await c21.get_messages(tampukomik,int(simink))
+        for qq in q.text.split():
+            try:
+                qw=int(qq)
+                mimink.append(qw)
+            except:continue
     if (p21.chat.id) not in daftarpeserta1:
         daftarpeserta1.append(p21.chat.id)
         kirim=0
@@ -192,7 +199,9 @@ async def tes21(c21,p21):
                 await asyncio.sleep(3,13)
                 await p21.reply(teks)
                 return"""
-            if ((pengguna2.count(p21.chat.id))+1)%3==0:
+            if p21.chat.id in mimink:
+                pass
+            elif ((pengguna2.count(p21.chat.id))+1)%3==0:
                 print(penggunaketangguh)
                 teks="Anda telah mendownload manga sejumlah"+str(pengguna2.count(p21.chat.id))+" pdf.\nSilahkan masukkan kode unik untuk diijinkan mengakses kembali.\n Kode unik Anda dapat diambil di situs PASTEBIN:\n"
                 sdhdita=0
@@ -207,7 +216,6 @@ async def tes21(c21,p21):
                 print(koderahasia,pkt)
                 print(koderahasia[pkt])
                 teks+="\nSilahkan ketikkan kode dengan format\n __'/kode(spasi)KODEUNIK'__\nContoh : /kode MAOSMANGA \n\nAtau bisa chat ke admin untuk mengajukan VIP '/hub'"
-                
                 await p21.reply(teks)
                 return
             try:
