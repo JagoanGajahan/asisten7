@@ -117,7 +117,7 @@ async def tes1(c,p):
         for hp in halamanpeserta1:
             t=await c.get_messages(iklanch,hp)
             if len(t.text)<4000:
-                await c.edit_message_text(iklanch,halamanpeserta1[kirim],t.text+"\n"+str(p.chat.id))
+                await c.edit_message_text(iklanch,hp,t.text+"\n"+str(p.chat.id))
                 break
     
     try:
