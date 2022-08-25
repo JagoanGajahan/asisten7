@@ -152,7 +152,7 @@ async def tes1(c,p):
             await asyncio.sleep(0.2)
             for m in daftarpeserta1:
                 try:
-                    await p.reply_to_message.copy(m)
+                    await p.reply_to_message.copy(m);kir+=1
                 except:
                     ggl+=1
                 await asyncio.sleep(0.2)
