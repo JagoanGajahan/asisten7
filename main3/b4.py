@@ -129,7 +129,7 @@ async def tes1(c,p):
             teks="Anda belum aktif menjadi member VVIP. \nSilahkan hubungi Owner : ~~@nokos_easy~~"
             await p.reply(teks)
             return
-        elif p.text[:12]=="/boardsemua " :
+        elif "/boardsemua " in p.text:
             ada=len(daftarpeserta1)
             kir=0
             ggl=0
