@@ -148,22 +148,22 @@ async def tes1(c,p):
             teks="Anda belum aktif menjadi member VVIP. \nSilahkan hubungi Owner : ~~@nokos_easy~~"
             await p.reply(teks)
             return
-        """
-        elif "/boardsemua " in p.text:
-            ada=len(daftarpeserta1)
-            kir=0
-            ggl=0
-            await p.forward(iklanch)
-            await asyncio.sleep(0.2)
-            for m in daftarpeserta1:
-                try:
-                    await c.send_message(m,p.text[12:]);kir+=1
-                except:
-                    ggl+=1
-                await asyncio.sleep(0.2)
-            await p.reply("Broad cast "+str(ada)+", kirim "+str(kir)+", gagal "+str(ggl))
-            print("Broad cast "+str(ada)+", kirim "+str(kir)+", gagal "+str(ggl))
-        """
+        
+        #elif "/boardsemua " in p.text:
+        #    ada=len(daftarpeserta1)
+        #    kir=0
+        #    ggl=0
+        #    await p.forward(iklanch)
+        #    await asyncio.sleep(0.2)
+        #    for m in daftarpeserta1:
+        #        try:
+        #            await c.send_message(m,p.text[12:]);kir+=1
+        #        except:
+        #            ggl+=1
+        #        await asyncio.sleep(0.2)
+        #    await p.reply("Broad cast "+str(ada)+", kirim "+str(kir)+", gagal "+str(ggl))
+        #    print("Broad cast "+str(ada)+", kirim "+str(kir)+", gagal "+str(ggl))
+        
         elif p.text=="/diboard":
             print("DIBROAD")
             ada=len(daftarpeserta1)
