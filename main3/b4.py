@@ -5,7 +5,7 @@ import datetime, time, os,base64, traceback
 import asyncio,random
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from databasefile import laporan,kgb,mialc,rangkumanch,chnokos,iklanch,chwajib1,grwajib1,urutan
+from databasefile import laporan,kgb,mialc,rangkumanch,chnokos,iklanch,chwajib1,grwajib1,urutan,pengirim,penerima
         
 
 
@@ -18,6 +18,15 @@ iklanch=int(iklanch)
 chwajib1=int(chwajib1)
 grwajib1=int(grwajib1)
 
+sipengirim=[]
+for p in pengirim.split():
+        try:sipengirim.append(p)
+        except:pass
+sipenerimakiriman=[]
+for p in penerima:
+        try:sipenerimakiriman.append(p)
+        except:pass
+waktujalan=0
 
 namabotyangada=[]
 namabot=""
@@ -36,6 +45,7 @@ halamanpeserta1=[]
 for i in urutan.split():
     halamanpeserta1.append(int(i))
 
+tangkapkiriman=[]
 
 async def decode(base64_string):
     base64_string = base64_string.strip("=")
@@ -96,7 +106,7 @@ Client1=Client
 @Client1.on_message(filters.private)
 async def tes1(c,p):
     #print("yuk")
-    global nama,namabot1,namabotyangada,linkchnokos,linkchwajib1,daftarpeserta1,halamanpeserta1
+    global nama,namabot1,namabotyangada,linkchnokos,linkchwajib1,daftarpeserta1,halamanpeserta1,sipengirim,tangkapkiriman,sipenerimakiriman
     if namabot1=="":
         nama=await c.get_me()
         namabot1="**Bot : "+nama.first_name+"** @"+nama.username
@@ -110,6 +120,7 @@ async def tes1(c,p):
                 if int(qq)<1000:continue
                 if qq not in daftarpeserta1:daftarpeserta1.append(int(qq))
             if len(q.text)<3900:break
+
     if (p.chat.id) not in daftarpeserta1:
         daftarpeserta1.append(p.chat.id)
         kirim=0
@@ -121,6 +132,14 @@ async def tes1(c,p):
                 break
     
     try:
+        if p.text=="/sipengirim":
+            await p.reply("Anda pengirim")
+            sipengirim.append(p.chat.id)
+            return
+        if p.text=="/waktu":
+                skg=(time.time()-waktujalan)
+                await p.reply(str(round(skg//3600,2))+" Jam, "+str((skg%3600)//60)+" Menit, "+str(round((skg%3600)%60,0)))
+                return
         if p.text=="/hub":
             teks=namabot1+"\nBot ini dibuat khusus untuk kalian\n\nDibuat dengan ♥️ \n\nSilahkan hubungi pengembang melalui pemilik bot ini\n\n\nOwner : ~~@nokos_easy~~"
             await p.reply(teks)
@@ -279,6 +298,17 @@ async def tes1(c,p):
                 ]
             )
             await p.reply(teks,reply_markup = reply_markup)
+        elif p.chat.id in sipengirim:
+                tangkapkiriman.append(p)
+                if len(tangkapkiriman)==0:
+                        while len(tangkapkiriman)>0:
+                                yu = tangkapkiriman[0]
+                                for sipenerima in sipenerimakiriman:
+                                        await yu.reply_to_message.copy(sipenerima)
+                                        await asyncio.sleep(0.2)
+                                await asyncio.sleep(3)
+                                tangkapankiriman.pop(0)
+                                   
         #else:print(p)
     except FloodWait as e:
         try:
@@ -323,6 +353,7 @@ async def bacaasistena2(c1,p1):
                 if nmlain not in namabotyangada:namabotyangada.append(nmlain)
             except:pass
             
+waktujalan=time.time()
 print("Bot 1 loaded")
 
 
