@@ -136,10 +136,10 @@ async def tes1(c,p):
             sipengirim.append(p.chat.id)
             sipppp=""
             for ss in sipengirim:
-                sipppp+=ss+" "
+                sipppp+=str(ss)+" "
             penerr=""
             for pp in sipenerimakiriman:
-                pener+=pp+" "
+                penerr+=str(pp)+" "
             await p.reply("Anda pengirim "+sipppp+" pener: "+penerr)
             
             return
