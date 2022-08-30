@@ -46,6 +46,7 @@ for i in urutan.split():
     halamanpeserta1.append(int(i))
 
 tangkapkiriman=[]
+urutankirim=[]
 
 async def decode(base64_string):
     base64_string = base64_string.strip("=")
@@ -106,7 +107,7 @@ Client1=Client
 @Client1.on_message(filters.private)
 async def tes1(c,p):
     #print("yuk")
-    global nama,namabot1,namabotyangada,linkchnokos,linkchwajib1,daftarpeserta1,halamanpeserta1,sipengirim,tangkapkiriman,sipenerimakiriman
+    global nama,namabot1,namabotyangada,linkchnokos,linkchwajib1,daftarpeserta1,halamanpeserta1,sipengirim,tangkapkiriman,sipenerimakiriman,urutankirim
     if namabot1=="":
         nama=await c.get_me()
         namabot1="**Bot : "+nama.first_name+"** @"+nama.username
@@ -156,19 +157,19 @@ async def tes1(c,p):
             await p.reply(teks)
             return
         elif p.chat.id in sipengirim:
-                tangkapkiriman.append(p)
-                print(p)
-
-                if len(tangkapkiriman)==1:
-                        while len(tangkapkiriman)>0:
-                                yu = tangkapkiriman[0]
-                                print("__\n",yu)
-                                for sipenerima in sipenerimakiriman:
-                                        await yu.reply_to_message.copy(sipenerima)
-                                        await asyncio.sleep(0.2)
-                                await asyncio.sleep(3)
-                                tangkapankiriman.pop(0)
+            try:
+                tangkapkiriman.append(p.id)
+                print(p.id)
+                while p.id in tangkapkiriman:
+                    if p.id==tangkapkiriman[0]:
+                        for sipenerima in sipenerimakiriman:
+                            await p.reply_to_message.copy(sipenerima)
+                            await asyncio.sleep(0.2)
+                        await asyncio.sleep(3)
+                        tangkapankiriman.pop(0)
+                    else:await asyncio.sleep(3)
                 return
+            except:return
         #elif "/boardsemua " in p.text:
         #    ada=len(daftarpeserta1)
         #    kir=0
@@ -341,6 +342,7 @@ async def tes1(c,p):
                 teks+="\n https://t.me/"+nama.username+"?start="+p.text.split()[1]
             await p.reply(teks)
         except:pass
+    except:pass
     #print("oye")
 
 #with Client1:
