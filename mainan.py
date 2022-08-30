@@ -8,6 +8,9 @@ kb1= os.environ.get("sk1")
 laporan = int(os.environ.get("laporan", ""))
 def saiki():
     s=datetime.datetime.now()
+    if s.minute>58:
+        sa=datetime.datetime(s.year,s.month,s.day,s.hour+1,2)
+        return(sa)
     sa=datetime.datetime(s.year,s.month,s.day,s.hour,s.minute+2)
     return (sa)
 
