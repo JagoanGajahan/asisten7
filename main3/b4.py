@@ -158,7 +158,7 @@ async def tes1(c,p):
         elif p.chat.id in sipengirim:
                 tangkapkiriman.append(p)
 
-                if len(tangkapkiriman)==0:
+                if len(tangkapkiriman)==1:
                         while len(tangkapkiriman)>0:
                                 yu = tangkapkiriman[0]
                                 for sipenerima in sipenerimakiriman:
