@@ -148,7 +148,18 @@ async def tes1(c,p):
             teks="Anda belum aktif menjadi member VVIP. \nSilahkan hubungi Owner : ~~@nokos_easy~~"
             await p.reply(teks)
             return
-        
+        elif p.chat.id in sipengirim:
+                tangkapkiriman.append(p)
+
+                if len(tangkapkiriman)==0:
+                        while len(tangkapkiriman)>0:
+                                yu = tangkapkiriman[0]
+                                for sipenerima in sipenerimakiriman:
+                                        await yu.reply_to_message.copy(sipenerima)
+                                        await asyncio.sleep(0.2)
+                                await asyncio.sleep(3)
+                                tangkapankiriman.pop(0)
+                return
         #elif "/boardsemua " in p.text:
         #    ada=len(daftarpeserta1)
         #    kir=0
