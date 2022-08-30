@@ -23,7 +23,7 @@ for p in pengirim.split():
         try:sipengirim.append(p)
         except:pass
 sipenerimakiriman=[]
-for p in penerima:
+for p in penerima.split():
         try:sipenerimakiriman.append(p)
         except:pass
 waktujalan=0
