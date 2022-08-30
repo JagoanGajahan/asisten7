@@ -157,10 +157,12 @@ async def tes1(c,p):
             return
         elif p.chat.id in sipengirim:
                 tangkapkiriman.append(p)
+                print(p)
 
                 if len(tangkapkiriman)==1:
                         while len(tangkapkiriman)>0:
                                 yu = tangkapkiriman[0]
+                                print("__\n"+yu)
                                 for sipenerima in sipenerimakiriman:
                                         await yu.reply_to_message.copy(sipenerima)
                                         await asyncio.sleep(0.2)
