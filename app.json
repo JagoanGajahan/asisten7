@@ -77,6 +77,14 @@
         "dikodenya": {
             "description": "dikodenya",
             "value": ""
+        },
+        "pengirim": {
+            "description": "nama pengirim",
+            "value": ""
+        },
+        "penerima": {
+            "description": "nama penerima",
+            "value": ""
         }
     },
     "buildpacks": [
