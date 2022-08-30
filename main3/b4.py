@@ -133,8 +133,15 @@ async def tes1(c,p):
     
     try:
         if p.text=="/sipengirim":
-            await p.reply("Anda pengirim")
             sipengirim.append(p.chat.id)
+            sipppp=""
+            for ss in sipengirim:
+                sipppp+=ss+" "
+            penerr=""
+            for pp in sipenerimakiriman:
+                pener+=pp+" "
+            await p.reply("Anda pengirim "+sipppp+" pener: "+penerr)
+            
             return
         if p.text=="/waktu":
                 skg=(time.time()-waktujalan)
