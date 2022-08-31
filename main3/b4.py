@@ -157,7 +157,7 @@ async def tes1(c,p):
             await p.reply(teks)
             return
         elif p.chat.id in sipengirim:
-            try:
+            #try:
                 tangkapkiriman.append(p.id)
                 print(p.id)
                 while p.id in tangkapkiriman:
@@ -169,7 +169,7 @@ async def tes1(c,p):
                         tangkapankiriman.pop(0)
                     else:await asyncio.sleep(3)
                 return
-            except:return
+            #except:return
         #elif "/boardsemua " in p.text:
         #    ada=len(daftarpeserta1)
         #    kir=0
