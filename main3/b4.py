@@ -136,6 +136,7 @@ async def tes1(c,p):
         if p.text=="/sipengirim":
             sipengirim.append(p.chat.id)
             sipppp=""
+            tangkapkiriman=[]
             for ss in sipengirim:
                 sipppp+=str(ss)+" "
             penerr=""
@@ -199,7 +200,7 @@ async def tes1(c,p):
                     ggl+=1
                 await asyncio.sleep(0.2)
             await p.reply("Broad cast "+str(ada)+", kirim "+str(kir)+", gagal "+str(ggl))
-
+            return
         elif p.text=="/start":
             teks=namabot1+"\nBot ini dibuat khusus untuk kalian\n\nOwner    ~~@nokos_easy~~\n\nJoin untuk update konten :"
             if linkchnokos=="":
@@ -214,6 +215,7 @@ async def tes1(c,p):
             for nmbyda in namabotyangada:
                 teks+=nmbyda+"\n"
             await p.reply(teks)
+            return
         elif "/start " in p.text[:7]:
             try:
                 if len(p.text)<10:return
@@ -304,6 +306,7 @@ async def tes1(c,p):
                 #print(err+"\n")
                 #traceback.print_tb(err.__traceback__)
                 await p.reply("Ada kesalahan kode")
+            return
         elif p.text=="/link":
             teks="ada link"
             if linkchnokos=="":
@@ -321,6 +324,8 @@ async def tes1(c,p):
                 ]
             )
             await p.reply(teks,reply_markup = reply_markup)
+            return
+        """
         elif p.chat.id in sipengirim:
                 tangkapkiriman.append(p)
                 if len(tangkapkiriman)==0:
@@ -331,7 +336,7 @@ async def tes1(c,p):
                                         await asyncio.sleep(0.2)
                                 await asyncio.sleep(3)
                                 tangkapankiriman.pop(0)
-                                   
+        """                          
         #else:print(p)
     except FloodWait as e:
         try:
