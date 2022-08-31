@@ -164,8 +164,8 @@ async def tes1(c,p):
                 while p.id in tangkapkiriman:
                     if p.id==tangkapkiriman[0]:
                         for sipenerima in sipenerimakiriman:
-                            print("penerima",sipenerima)
-                            await p.reply_to_message.copy(sipenerima)
+                            #print("penerima",sipenerima)
+                            await p.copy(sipenerima)
                             await asyncio.sleep(0.2)
                         await asyncio.sleep(3)
                         tangkapankiriman.pop(0)
