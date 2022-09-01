@@ -281,7 +281,7 @@ async def tes1(c,p):
                 elif kod==1:
                     dok=rangkumanch
                     for x in range (dar,smp):
-                        m=await c.get_messages(rangkumanch,x)
+                        m=await c.get_messages("cewemaret",x)
                         await m.copy(p.chat.id,protect_content=True)
                         await asyncio.sleep(0.5)
                 elif kod==2:
@@ -299,7 +299,7 @@ async def tes1(c,p):
                                 await p.reply(teks)
                                 return
                         except:pass
-                await p.reply("Dapatkan Video Lainnya dengan murah, \ntanpa capek cari klik link.cuma 4k Gopay.\n Cek di @nokos_easy2")
+                await p.reply("Dapatkan Video Lainnya dengan murah, \ntanpa capek cari klik link.cuma 4ribu Gopay atau DANA.\n Cek di @nokos_easy2")
                 print("Terkirim",kod)
 
 
