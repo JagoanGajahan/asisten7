@@ -196,7 +196,7 @@ async def tes1(c,p):
             for dp1p in daftarpeserta1:
                 if dp1p not in dt11:
                         try:
-                                dt11.append(int(dp1p)
+                                dt11.append(int(dp1p))
                         except:pass
             daftarpeserta1=dt11
             ada=len(daftarpeserta1)
