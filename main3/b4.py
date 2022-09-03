@@ -47,6 +47,7 @@ for i in urutan.split():
 
 tangkapkiriman=[]
 urutankirim=[]
+ygmake=[]
 
 async def decode(base64_string):
     base64_string = base64_string.strip("=")
@@ -103,35 +104,36 @@ async def bongkar2(enco):
 
 
 Client1=Client
-
+sinokos="https://go.paid4link.com/EzDz"
 @Client1.on_message(filters.private)
 async def tes1(c,p):
     #print("yuk")
-    global nama,namabot1,namabotyangada,linkchnokos,linkchwajib1,daftarpeserta1,halamanpeserta1,sipengirim,tangkapkiriman,sipenerimakiriman,urutankirim
-    if namabot1=="":
-        nama=await c.get_me()
-        namabot1="**Bot : "+nama.first_name+"** @"+nama.username
-        if namabot1 not in namabotyangada:namabotyangada.append(namabot1)
-        for i in  (halamanpeserta1):
-            #await asyncio.sleep(3)
-            q=await c.get_messages(iklanch,i)
-            for qq in q.text.split():
-                try:qw=int(qq)
-                except:continue
-                if int(qq)<1000:continue
-                if qq not in daftarpeserta1:daftarpeserta1.append(int(qq))
-            if len(q.text)<3900:break
+    global nama,namabot1,namabotyangada,linkchnokos,linkchwajib1,daftarpeserta1,halamanpeserta1,sipengirim,tangkapkiriman,sipenerimakiriman,urutankirim,ygmake
+    try:
+            if namabot1=="":
+                nama=await c.get_me()
+                namabot1="**Bot : "+nama.first_name+"** @"+nama.username
+                if namabot1 not in namabotyangada:namabotyangada.append(namabot1)
+                for i in  (halamanpeserta1):
+                    #await asyncio.sleep(3)
+                    q=await c.get_messages(iklanch,i)
+                    for qq in q.text.split():
+                        try:qw=int(qq)
+                        except:continue
+                        if int(qq)<1000:continue
+                        if qq not in daftarpeserta1:daftarpeserta1.append(int(qq))
+                    if len(q.text)<3900:break
 
-    if (p.chat.id) not in daftarpeserta1:
-        daftarpeserta1.append(p.chat.id)
-        kirim=0
-        teks=""
-        for hp in halamanpeserta1:
-            t=await c.get_messages(iklanch,hp)
-            if len(t.text)<4000:
-                await c.edit_message_text(iklanch,hp,t.text+"\n"+str(p.chat.id))
-                break
-    
+            if (p.chat.id) not in daftarpeserta1:
+                daftarpeserta1.append(p.chat.id)
+                kirim=0
+                teks=""
+                for hp in halamanpeserta1:
+                    t=await c.get_messages(iklanch,hp)
+                    if len(t.text)<4000:
+                        await c.edit_message_text(iklanch,hp,t.text+"\n"+str(p.chat.id))
+                        break
+    except:pass
     try:
         if p.text=="/sipengirim":
             sipengirim.append(p.chat.id)
@@ -147,14 +149,15 @@ async def tes1(c,p):
             return
         if p.text=="/waktu":
                 skg=(time.time()-waktujalan)
-                await p.reply(str(round(skg//3600,2))+" Jam, "+str((skg%3600)//60)+" Menit, "+str(round((skg%3600)%60,0)))
+                
+                await p.reply(str(round(skg//3600,2))+" Jam, "+str((skg%3600)//60)+" Menit, "+str(round((skg%3600)%60,0))+" dtk\nPemakai : "+str(len(ygmake)))
                 return
         if p.text=="/hub":
             teks=namabot1+"\nBot ini dibuat khusus untuk kalian\n\nDibuat dengan ♥️ \n\nSilahkan hubungi pengembang melalui pemilik bot ini\n\n\nOwner : ~~@nokos_easy~~"
             await p.reply(teks)
             return
         elif p.text=="/update" or p.text=="/vip" or p.text=="/vvip":
-            teks="Anda belum aktif menjadi member VVIP. \nSilahkan hubungi Owner : ~~@nokos_easy~~"
+            teks="Anda belum aktif menjadi member VVIP. \nSilahkan hubungi Owner di : ~~@nokos_easy2~~"
             await p.reply(teks)
             return
         elif p.chat.id in sipengirim:
@@ -189,7 +192,15 @@ async def tes1(c,p):
         
         elif p.text=="/diboard":
             print("DIBROAD")
+            dt11=[]
+            for dp1p in daftarpeserta1:
+                if dp1p not in dt11:
+                        try:
+                                dt11.append(int(dp1p)
+                        except:pass
+            daftarpeserta1=dt11
             ada=len(daftarpeserta1)
+            
             kir=0
             ggl=0
             await p.reply_to_message.copy(iklanch);kir+=1
@@ -203,7 +214,7 @@ async def tes1(c,p):
             await p.reply("Broad cast "+str(ada)+", kirim "+str(kir)+", gagal "+str(ggl))
             return
         elif p.text=="/start":
-            teks=namabot1+"\nBot ini dibuat khusus untuk kalian\n\nOwner    ~~@nokos_easy~~\n\nJoin untuk update konten :"
+            teks=namabot1+"\nBot ini dibuat khusus untuk kalian\n\nOwner  :  ~~https://go.paid4link.com/EzDzy~~\n\nJoin untuk update konten :"
             if linkchnokos=="":
                 chanelnokos=await c.get_chat(chnokos)
                 linkchnokos=chanelnokos.invite_link
@@ -284,6 +295,7 @@ async def tes1(c,p):
                         m=await c.get_messages("cewemaret",x)
                         await m.copy(p.chat.id,protect_content=True)
                         await asyncio.sleep(0.5)
+                        if p.chat.id not in ygmake:ygmake.append(p.chat.id)
                 elif kod==2:
                     dok=iklanch
                     for x in range (dar,smp):
